@@ -15,4 +15,15 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.maps.tiled.TmxMapLoader"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.World"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.maps.MapObject"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.maps.objects.PolylineMapObject"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.Shape"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.Body"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.BodyDef.BodyType"/>
+<fullyQualifiedTypeName name="com.mygdx.game.TiledObjectsUtils"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.PolygonShape"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.GL20"/>
 </qualifiedTypeNameHistroy>
