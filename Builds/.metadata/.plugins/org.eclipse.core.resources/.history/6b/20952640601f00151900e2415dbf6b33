@@ -1,0 +1,61 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+
+public class GameScreen implements Screen {
+
+	SpriteBatch batch;
+	Texture disaytid;
+	OrthogonalTiledMapRenderer tmx;
+	OrthographicCamera camera;
+	TiledMap map;
+	
+	@Override
+	public void show() {
+		batch = new SpriteBatch();
+		map = new TmxMapLoader().load("maps/test.tmx");
+		tmx = new OrthogonalTiledMapRenderer(map);
+		camera = new OrthographicCamera();
+		camera.setToOrtho(false, Gdx.graphics.getWidth() / 4, Gdx.graphics.getHeight() / 4);
+		camera.position.set(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, 0);
+	}
+
+	@Override
+	public void render(float delta) {
+		camera.update();
+		batch.begin();
+		tmx.setView(camera);
+		tmx.render();
+		batch.end();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		camera.setToOrtho(false, width /2, height/2);
+	}
+
+	@Override
+	public void pause() {}
+
+	@Override
+	public void resume() {}
+
+	@Override
+	public void hide() {}
+
+	@Override
+	public void dispose() {
+		disaytid.dispose();
+		batch.dispose();
+		tmx.dispose();
+		map.dispose();
+	}
+
+}

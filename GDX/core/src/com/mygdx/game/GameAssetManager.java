@@ -3,7 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 
-public class GameAssetManager extends KostilAssetManager {
+public class GameAssetManager extends AssetManager {
 
 	private static GameAssetManager instance;
 	
