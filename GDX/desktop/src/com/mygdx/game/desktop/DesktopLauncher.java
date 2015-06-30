@@ -7,6 +7,10 @@ import com.mygdx.game.DitFMain;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		config.title = "Dragon in the Fog";
+		//config.fullscreen = true;
+		config.width = 600;
+		config.height = 400;
 		new LwjglApplication(new DitFMain(), config);
 	}
 }
