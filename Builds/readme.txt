@@ -1,1 +1,5 @@
-Its builds a test version.
+This test builds are ...
+After starting the assembly, press R, and you will pass to the main stage.
+
+Это сборки являются тестовыми...
+После запуска сборки нажмите R и вы перейдёте в основную сцену.

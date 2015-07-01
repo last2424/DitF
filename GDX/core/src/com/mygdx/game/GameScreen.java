@@ -1,6 +1,9 @@
 package com.mygdx.game;
 
+import javafx.scene.input.KeyCode;
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -34,7 +37,7 @@ public class GameScreen implements Screen {
 		tmx = new OrthogonalTiledMapRenderer(map);
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
-		world = new World(new Vector2(0, -9.8f), false);
+		world = new World(new Vector2(0, -100f), false);
 		b2dr = new Box2DDebugRenderer();
 		TiledObjectsUtils.parseTiledObjectLayer(world, map.getLayers().get("coll").getObjects());
 		player = createBox();
@@ -55,8 +58,22 @@ public class GameScreen implements Screen {
 	public void update(float delta){
 		world.step(1/60f, 6, 2);
 		camera.update();
+		movingUpdate(delta);
 		tmx.setView(camera);
 		batch.setProjectionMatrix(camera.combined);
+	}
+
+	private void movingUpdate(float delta) {
+		int horizontspeed = 0;
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
+			horizontspeed = -5;
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+			horizontspeed = 5;
+		}
+		
+		player.setLinearVelocity(horizontspeed * 5, player.getLinearVelocity().y);
+		
 	}
 
 	@Override

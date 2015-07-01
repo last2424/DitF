@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.assets.loaders.FileHandleResolver"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.assets.AssetManager"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
 <fullyQualifiedTypeName name="com.mygdx.game.GameAssetManager"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.OrthographicCamera"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.assets.loaders.resolvers.ExternalFileHandleResolver"/>
@@ -26,4 +25,26 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.physics.box2d.PolygonShape"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.GL20"/>
+<fullyQualifiedTypeName name="javafx.scene.input.KeyCode"/>
+<fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+<fullyQualifiedTypeName name="javax.xml.parsers.ParserConfigurationException"/>
+<fullyQualifiedTypeName name="javax.xml.transform.TransformerException"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.txw2.Document"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.utils.XmlReader.Element"/>
+<fullyQualifiedTypeName name="javax.xml.bind.Element"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+<fullyQualifiedTypeName name="javax.xml.transform.TransformerFactory"/>
+<fullyQualifiedTypeName name="javax.xml.transform.Transformer"/>
+<fullyQualifiedTypeName name="javax.xml.transform.stream.StreamResult"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="javax.xml.transform.dom.DOMSource"/>
+<fullyQualifiedTypeName name="javax.xml.transform.OutputKeys"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Input"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.mygdx.game.DitFMain"/>
 </qualifiedTypeNameHistroy>

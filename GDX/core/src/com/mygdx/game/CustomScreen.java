@@ -18,6 +18,13 @@ public enum CustomScreen {
 		}
 	},
 	
+	CREATE_PLAYER {
+		@Override
+		protected Screen getScreenInstance(){
+			return new CreatePScreen();
+		}
+	},
+	
 	GAME {
 		@Override
 		protected Screen getScreenInstance() {
