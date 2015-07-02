@@ -1,13 +1,15 @@
 package com.mygdx.game;
 
-import javafx.scene.input.KeyCode;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.VertexAttribute;
+import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -32,6 +34,7 @@ public class GameScreen implements Screen {
 	
 	@Override
 	public void show() {
+		map = new TmxMapLoader().load("maps/test.tmx");
 		batch = new SpriteBatch();
 		map = new TmxMapLoader().load("maps/test.tmx");
 		tmx = new OrthogonalTiledMapRenderer(map);

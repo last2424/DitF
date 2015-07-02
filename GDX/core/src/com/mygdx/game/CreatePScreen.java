@@ -18,15 +18,30 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class CreatePScreen implements Screen {
 
+	Skin skin;
 	private String locationgame = DitFMain.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 	private String dirPathgame = new File(locationgame).getParent();
 	DocumentBuilder builder;
 	int a = 1;
+	TextField name;
+	GUITextInputListener listener;
+	Stage stage;
+	OrthographicCamera camera;
+	SpriteBatch batch;
+	Viewport viewport;
 	
 	public CreatePScreen() {
 		ParamLangXML();
@@ -58,15 +73,46 @@ public class CreatePScreen implements Screen {
 	}
 
 	@Override
-	public void show() {}
-
-	@Override
-	public void render(float delta) {
-		if(Gdx.input.isKeyJustPressed(Input.Keys.R)) initPlayer("Player", a);
+	public void show() {
+		stage = new Stage();
+		Gdx.input.setInputProcessor(stage);
+		camera = new OrthographicCamera();
+		viewport = new ExtendViewport(100 * (100 / 50), 50, camera);
+		viewport.apply();
+		camera.position.set(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, 0);
+		batch = new SpriteBatch();
+		listener = new GUITextInputListener();
+		skin = new Skin(Gdx.files.internal("uiskin.json"));
+		name = new TextField("", skin);
+		name.setPosition(250, 250);
+		name.setSize(300, 40);
+		stage.addActor(name);
+		
 	}
 
 	@Override
-	public void resize(int width, int height) {}
+	public void render(float delta) {
+		update(delta);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		stage.act(delta);
+		stage.draw();
+		batch.begin();
+		batch.end();
+	}
+
+	private void update(float delta) {
+		camera.update();
+		batch.setProjectionMatrix(camera.combined);
+		stage.getBatch().setProjectionMatrix(camera.combined);
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		viewport.update(width/2, height/2);
+		camera.update();
+		camera.position.set(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, 0);
+	}
 
 	@Override
 	public void pause() {}
