@@ -34,7 +34,6 @@ public class GameScreen implements Screen {
 	
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/test.tmx");
 		batch = new SpriteBatch();
 		map = new TmxMapLoader().load("maps/test.tmx");
 		tmx = new OrthogonalTiledMapRenderer(map);
@@ -53,8 +52,8 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		tmx.render();
 		batch.end();
+		tmx.render();
 		b2dr.render(world, camera.combined);
 	}
 	
